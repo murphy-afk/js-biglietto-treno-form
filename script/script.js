@@ -10,8 +10,10 @@ const form = document.querySelector("form");
 const ageInput = document.getElementById("age");
 const distInput = document.getElementById("distance");
 const pricing = document.querySelector(".pricing");
+const nameInput = document.getElementById("name");
+const passengerName = document.querySelector(".passengerName");
+const ticketType = document.querySelector(".ticketType");
 
-let discountType = "Standard";
 const calculatePrice = (age, distance) => {
   const minorDiscount = 20;
   const elderDiscount = 40;
@@ -19,32 +21,23 @@ const calculatePrice = (age, distance) => {
   let price = distance * kmPrice;
   let discount = 0;
 
-  if (age < 18) {
+  if (age <= 18) {
     discount = price * (minorDiscount / 100);
-    discountType = "Under 18";
   }
-  else if (age > 65) {
+  else if (age >= 65) {
     discount = price * (elderDiscount / 100);
-    discountType = "Over 65";
   }
   const finalPrice = price - discount;
   const result = finalPrice.toFixed(2);
-  // send discounType to ticket 
-  console.log(discountType);
+
   return result;
 }
 
-
-
-// const calculateDiscount = () => {
-
-// }
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const userAge = parseInt(ageInput.value);
   const userDistance = parseInt(distInput.value);
-
 
   if (isNaN(userAge) || isNaN(userDistance)) {
     alert("inserisci la tua età e distanza da percorrere");
@@ -55,6 +48,12 @@ form.addEventListener("submit", (event) => {
   else {
     const ticketPrice = calculatePrice(userAge, userDistance);
     pricing.innerText = ticketPrice;
+    passengerName.innerText = nameInput.value;
   }
+  let ticketTypeValue;
+  if (userAge <= 18) ticketTypeValue= "Under 18";
+  if (userAge >= 65) ticketTypeValue= "Over 65";
+  ticketTypeValue= "Standard";
+  ticketType.innerText = ticketTypeValue;
 });
 
