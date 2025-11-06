@@ -12,15 +12,35 @@
 
 <body>
   <div class="container">
-    <form action="submit" class="">
-      <label for="age" class="form-label">Inserisci la tua età</label>
-      <input type="number" name="age" id="age" class="form-control">
-      <label for="distance" class="form-label">Quanti km devi percorrere?</label>
-      <input type="number" name="distance" id="distance" class="form-control">
-      <button type="submit" class="btn border">Calcola il prezzo</button>
+    <h1 class="title text-center text-decoration-underline py-3">Ticket Machine</h1>
+    <h2 class="fs-5 fw-light mt-5">Inserisci la tua età e la distanza da percorrere in Chilometri:</h2>
+    <form action="submit">
+      <div class="row justify-content-center align-items-baseline">
+        <div class="col">
+          <label for="name" class="form-label">Inserisci il tuo nome completo</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="Nome Cognome">
+        </div>
+        <div class="col">
+          <label for="age" class="form-label">Inserisci la tua età</label>
+          <input type="number" name="age" id="age" class="form-control" placeholder="Età">
+        </div>
+        <div class="col">
+          <label for="distance" class="form-label">Quanti km devi percorrere?</label>
+          <input type="number" name="distance" id="distance" class="form-control" placeholder="Chilometri">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-12">
+          <button type="submit" class="btn border">Calcola il prezzo</button>
+        </div>
+      </div>
     </form>
-    <div class="ticket">
-      <p class="pricing"></p>
+    <div class="card ticket mt-5">
+      <div class="card-header">Il tuo biglietto</div>
+      <div class="card-body">
+
+        <p class="pricing"></p>
+      </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
