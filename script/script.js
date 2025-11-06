@@ -55,15 +55,15 @@ form.addEventListener("submit", (event) => {
     pricing.innerHTML = `${ticketPrice}&euro;`;
     passengerName.innerText = nameInput.value;
     let ticketTypeValue;
-    if (userAge <= 18) ticketTypeValue= "Under 18";
-    if (userAge >= 65) ticketTypeValue= "Over 65";
-    ticketTypeValue= "Standard";
+    if (userAge <= 18) ticketTypeValue = "Under 18";
+    if (userAge >= 65) ticketTypeValue = "Over 65";
+    ticketTypeValue = "Standard";
     ticketType.innerText = ticketTypeValue;
-    let randomNumber = Math.floor(Math.random()* 24) + 1;
+    let randomNumber = Math.floor(Math.random() * 24) + 1;
     carriage.innerText = randomNumber;
     ticketCard.classList.remove("d-none")
   }
 });
 
-form.addEventListener("reset", (event) => ticketCard.classList.add("d-none"));
+form.addEventListener("reset", () => ticketCard.classList.add("d-none"));
 
