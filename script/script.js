@@ -52,7 +52,7 @@ form.addEventListener("submit", (event) => {
   }
   else {
     const ticketPrice = calculatePrice(userAge, userDistance);
-    pricing.innerText = ticketPrice;
+    pricing.innerHTML = `${ticketPrice}&euro;`;
     passengerName.innerText = nameInput.value;
     let ticketTypeValue;
     if (userAge <= 18) ticketTypeValue= "Under 18";
