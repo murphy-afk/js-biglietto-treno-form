@@ -13,6 +13,8 @@ const pricing = document.querySelector(".pricing");
 const nameInput = document.getElementById("name");
 const passengerName = document.querySelector(".passengerName");
 const ticketType = document.querySelector(".ticketType");
+const carriage = document.querySelector(".carriage");
+const ticketCard = document.querySelector(".ticket");
 
 const calculatePrice = (age, distance) => {
   const minorDiscount = 20;
@@ -43,17 +45,25 @@ form.addEventListener("submit", (event) => {
     alert("inserisci la tua età e distanza da percorrere");
   }
   else if (userAge < 1 || userAge > 120) {
-    alert("inserire un età valida")
+    alert("inserire un età valida");
+  }
+  else if (nameInput.value.trim() === "") {
+    alert("inserire un nome");
   }
   else {
     const ticketPrice = calculatePrice(userAge, userDistance);
     pricing.innerText = ticketPrice;
     passengerName.innerText = nameInput.value;
+    let ticketTypeValue;
+    if (userAge <= 18) ticketTypeValue= "Under 18";
+    if (userAge >= 65) ticketTypeValue= "Over 65";
+    ticketTypeValue= "Standard";
+    ticketType.innerText = ticketTypeValue;
+    let randomNumber = Math.floor(Math.random()* 24) + 1;
+    carriage.innerText = randomNumber;
+    ticketCard.classList.remove("d-none")
   }
-  let ticketTypeValue;
-  if (userAge <= 18) ticketTypeValue= "Under 18";
-  if (userAge >= 65) ticketTypeValue= "Over 65";
-  ticketTypeValue= "Standard";
-  ticketType.innerText = ticketTypeValue;
 });
+
+form.addEventListener("reset", (event) => ticketCard.classList.add("d-none"));
 

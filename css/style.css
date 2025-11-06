@@ -1,0 +1,22 @@
+.container {
+  background-color: rgb(176, 148, 203);
+  
+}
+
+body {
+  background-color: rgb(152, 133, 167);
+}
+
+.col-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: rgb(217, 158, 198);
+}
+
+.card-header {
+  background-color: rgb(179, 86, 137);
+}

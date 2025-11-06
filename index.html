@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container h-100 p-5 rounded-5 mt-2">
     <h1 class="title text-center text-decoration-underline py-3">Ticket Machine</h1>
     <h2 class="fs-5 fw-light mt-5">Inserisci la tua età e la distanza da percorrere in Chilometri:</h2>
     <form action="submit">
@@ -31,26 +31,28 @@
       </div>
       <div class="row mt-2">
         <div class="col-12">
-          <button type="submit" class="btn border">Calcola il prezzo</button>
+          <button type="submit" class="btn border text-light">Calcola il prezzo</button>
+          <button type="reset" class="btn border text-light">Annulla</button>
         </div>
       </div>
     </form>
-    <div class="card ticket mt-5">
-      <div class="card-header">Il tuo biglietto</div>
+    <div class="card ticket d-none mt-5">
+      <div class="card-header text-light fw-bold">Il tuo biglietto</div>
       <div class="card-body row">
         <div class="col-3">
-          <h3 class="fs-5">Nome passeggero</h3>
+          <h3 class="fs-6">Nome passeggero</h3>
           <p class="passengerName"></p>
         </div>
         <div class="col-3">
-          <h3 class="fs-5">Tariffa</h3>
+          <h3 class="fs-6">Tariffa</h3>
           <p class="ticketType"></p>
         </div>
         <div class="col-3">
-          <h3 class="fs-5">boh</h3>
+          <h3 class="fs-6">Carrozza</h3>
+          <p class="carriage"></p>
         </div>
         <div class="col-3">
-          <h3 class="fs-5">Prezzo</h3>
+          <h3 class="fs-6">Prezzo</h3>
           <p class="pricing"></p>
         </div>
 
