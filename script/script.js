@@ -6,10 +6,11 @@
 // il prezzo del biglietto è definito in base ai km (0.21 € al km)
 // va applicato uno sconto del 20% per i minorenni
 // va applicato uno sconto del 40% per gli over 65.
-const submit = document.querySelector("button");
 const form = document.querySelector("form");
 const ageInput = document.getElementById("age");
-const distInput = document.getElementById("distance")
+const distInput = document.getElementById("distance");
+const pricing = document.querySelector(".pricing");
+
 
 const calculatePrice = (age, distance) => {
   const minorDiscount = 20;
@@ -34,6 +35,6 @@ form.addEventListener("submit", (event) => {
   const userAge = ageInput.value;
   const userDistance = distInput.value;
   const ticketPrice = calculatePrice(userAge, userDistance);
-  console.log(ticketPrice);
-  
-})
+  pricing.innerText = ticketPrice;
+});
+
