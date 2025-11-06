@@ -25,16 +25,24 @@ const calculatePrice = (age, distance) => {
   else if (age > 65) {
     discount = price * (elderDiscount / 100);
   }
-  price = price - discount;
-  const result = price.toFixed(2);
+  const finalPrice = price - discount;
+  const result = finalPrice.toFixed(2);
   return result
 }
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const userAge = ageInput.value;
-  const userDistance = distInput.value;
-  const ticketPrice = calculatePrice(userAge, userDistance);
-  pricing.innerText = ticketPrice;
+  const userAge = parseInt(ageInput.value);
+  const userDistance = parseInt(distInput.value);
+  console.log(userAge);
+  
+  
+  if (isNaN(userAge) || isNaN(userDistance)) {
+    alert("inserisci la tua età e distanza da percorrere");
+  }
+  else {
+    const ticketPrice = calculatePrice(userAge, userDistance);
+    pricing.innerText = ticketPrice;
+  }
 });
 
